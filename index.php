@@ -118,7 +118,7 @@
         <form action="db_registrasi.php" method="POST" enctype="multipart/form-data">
             <div class="main-input-info">
                 <div class="input-box">
-                    <label for="nama_lengkap">Nama Lengkap*</label>
+                    <label for="nama_lengkap">Nama*</label>
                     <input id="name" type="text" name="nama_lengkap" placeholder="Masukkan Nama Lengkap" size="38"
                         required>
                 </div>
