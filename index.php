@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>UTS Registrasi</title>
     <style type="text/css">
         * {
@@ -71,48 +71,17 @@
             padding: 0 8px;
         }
 
-        .form-submit-btn input {
-            margin-left: 10.3cm;
-            padding: 6px;
-            width: 30%;
-            border-radius: 5px;
-            border: none;
-            color: white;
-            font-size: 20px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 1ms ease;
-            background: #1E90FF;
+        button{
+            margin-left: 10.1cm;
+            height: 50px;
         }
 
-        .form-submit-btn input:hover {
-            color: black;
-            background: #1E90FF;
-        }
-
-        .container a {
-            text-decoration: none;
-            margin-left: 12cm;
-            padding: 6px;
-            border-radius: 5px;
-            color: white;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            background: #1E90FF;
-        }
-
-        .container a:hover {
-            color: black;
-            background: #1E90FF;
-        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <a href="tabel.php" class="table">Lihat Data</a>
+
         <p class="header">School Music Concert Festival</p>
 
         <form action="db_registrasi.php" method="POST" enctype="multipart/form-data">
@@ -144,9 +113,10 @@
                     <label for="foto">Foto Kartu Pelajar*</label>
                     <input type="file" name="foto" accept="image/*" required />
                 </div>
-                <div class="form-submit-btn">
-                    <br><input type="submit" name="tombol" value="Next" />
-                </div>
+                
+                <a href="tabel.php" class="btn btn-warning" role="button">Lihat Data</a>
+                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+
             </div>
         </form>
     </div>
