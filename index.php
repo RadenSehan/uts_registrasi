@@ -114,7 +114,7 @@
                     <input type="file" name="foto" accept="image/*" required />
                 </div>
                 
-                <a href="tabel.php" class="btn btn-warning" role="button">Lihat Data</a>
+                <a href="tabel.php" class="btn btn-primary" role="button">Lihat Data</a>
                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>
 
             </div>
