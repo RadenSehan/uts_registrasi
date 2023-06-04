@@ -1,4 +1,11 @@
-<style type="text/css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>Data Konser</title>
+    <style type="text/css">
     body {
         margin: 1cm;
         font-family: Georgia, 'Times New Roman', Times, serif;
@@ -29,29 +36,12 @@
         margin: 1cm auto;
         box-shadow: inset -2px 2px 2px white;
     }
-
-    .data-konser a {
-        text-decoration: none;
-        text-align: center;
-        padding: 8px;
-        border-radius: 5px;
-        color: white;
-        font-family: "Segoe UI";
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        background: #1E90FF;
-    }
-
-    .data-konser a:hover {
-        color: black;
-        background: #1E90FF;
-    }
 </style>
-
+</head>
+<body>
 <?php
 
-$db = new mysqli("localhost", "root", "", "konser");
+$db = new mysqli("localhost", "root", "", "db_konser");
 
 $result = $db->query("SELECT * FROM tb_form");
 
@@ -59,7 +49,7 @@ $db->close();
 ?>
 
 <div class="data-konser">
-    <a href="index.php" class="back">Kembali</a>
+    <a href="index.php" class="btn btn-primary" role="button">Kembali</a>
     <h2>Data School Festival Consert</h2>
     <table border="1" cellspacing="0" cellpadding="9" align="center">
         <tr id="baris1">
@@ -85,10 +75,12 @@ $db->close();
                     <?= $row["konser"]; ?>
                 </td>
                 <td id=foto>
-                    <img src="/uts_registrasi/images/<?php echo $row["foto"];?>"width="150" height="90">
+                    <img src="/uts_registrasi/images/<?php echo $row["foto"]; ?>" width="150" height="90">
                 </td>
             </tr>
         <?php } ?>
 
     </table>
 </div>
+</body>
+</html>
