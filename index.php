@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>UTS Registrasi</title>
     <style type="text/css">
         * {
@@ -20,7 +21,7 @@
             background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 1355px;
+            background-size: 1400px;
         }
 
         .container {
@@ -33,7 +34,7 @@
             box-shadow: inset -2px 2px 2px white;
         }
 
-        .header {
+        h2 {
             width: 88%;
             color: #ffffff;
             font-size: 27px;
@@ -71,20 +72,19 @@
             padding: 0 8px;
         }
 
-        button{
+        button {
             margin-left: 10.1cm;
             height: 50px;
         }
-
     </style>
 </head>
 
 <body>
     <div class="container">
 
-        <p class="header">School Music Concert Festival</p>
+        <h2>School Music Concert Festival</h2>
 
-        <form action="db_registrasi.php" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data">
             <div class="main-input-info">
                 <div class="input-box">
                     <label for="nama_lengkap">Nama Lengkap*</label>
@@ -113,13 +113,38 @@
                     <label for="foto">Foto Kartu Pelajar*</label>
                     <input type="file" name="foto" accept="image/*" required />
                 </div>
-                
-                <a href="tabel.php" class="btn btn-primary" role="button">Lihat Data</a>
-                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+
+                <a href="admin.php" class="btn btn-warning" role="button">Admin</a>
+                <button type="submit" name="submit" class="btn btn-primary">SUBMIT</button>
 
             </div>
         </form>
     </div>
-</body>
+    <?php
+    if (isset($_POST['submit'])) {
+        $db = new mysqli("localhost", "root", "", "db_konser");
 
+        $nama = $_POST["nama_lengkap"];
+        $alamat = $_POST["alamat"];
+        $email = $_POST["email"];
+        $konser = $_POST["konser"];
+        $foto = $_FILES["foto"]["name"];
+        $tempname = $_FILES["foto"]["tmp_name"];
+        $folder = "images/" . $foto;
+        move_uploaded_file($tempname, $folder);
+
+        $db = new mysqli("localhost", "root", "", "db_konser");
+
+        if (mysqli_connect_errno()) {
+            die("Connection error: " . mysqli_connect_errno());
+        } else {
+            $sql = "INSERT INTO tb_form (nama_lengkap, alamat, email, konser, foto)
+                VALUES ('$nama', '$alamat', '$email', '$konser', '$foto')";
+
+            mysqli_query($db, $sql);
+            echo "<script> alert ('Berhasil memasukkan data')</script>";
+        }
+    }
+    ?>
+</body>
 </html>
