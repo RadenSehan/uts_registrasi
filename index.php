@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>UTS Registrasi</title>
     <style type="text/css">
         * {
@@ -35,7 +35,7 @@
         }
 
         h2 {
-            width: 88%;
+            width: 80%;
             color: #ffffff;
             font-size: 27px;
             font-weight: 700;
@@ -80,6 +80,33 @@
 </head>
 
 <body>
+<?php
+    if (isset($_POST['submit'])) {
+        $db = new mysqli("localhost", "root", "", "db_konser");
+
+        $nama = $_POST["nama_lengkap"];
+        $alamat = $_POST["alamat"];
+        $email = $_POST["email"];
+        $konser = $_POST["konser"];
+        $foto = $_FILES["foto"]["name"];
+        $tempname = $_FILES["foto"]["tmp_name"];
+        $folder = "images/" . $foto;
+        move_uploaded_file($tempname, $folder);
+
+        $db = new mysqli("localhost", "root", "", "db_konser");
+
+        if (mysqli_connect_errno()) {
+            die("Connection error: " . mysqli_connect_errno());
+        } else {
+            $sql = "INSERT INTO tb_form (nama_lengkap, alamat, email, konser, foto)
+                VALUES ('$nama', '$alamat', '$email', '$konser', '$foto')";
+
+            mysqli_query($db, $sql);
+            echo "<script> alert ('Berhasil memasukkan data')</script>";
+        }
+    }
+    ?>
+
     <div class="container">
 
         <h2>School Music Concert Festival</h2>
@@ -120,31 +147,5 @@
             </div>
         </form>
     </div>
-    <?php
-    if (isset($_POST['submit'])) {
-        $db = new mysqli("localhost", "root", "", "db_konser");
-
-        $nama = $_POST["nama_lengkap"];
-        $alamat = $_POST["alamat"];
-        $email = $_POST["email"];
-        $konser = $_POST["konser"];
-        $foto = $_FILES["foto"]["name"];
-        $tempname = $_FILES["foto"]["tmp_name"];
-        $folder = "images/" . $foto;
-        move_uploaded_file($tempname, $folder);
-
-        $db = new mysqli("localhost", "root", "", "db_konser");
-
-        if (mysqli_connect_errno()) {
-            die("Connection error: " . mysqli_connect_errno());
-        } else {
-            $sql = "INSERT INTO tb_form (nama_lengkap, alamat, email, konser, foto)
-                VALUES ('$nama', '$alamat', '$email', '$konser', '$foto')";
-
-            mysqli_query($db, $sql);
-            echo "<script> alert ('Berhasil memasukkan data')</script>";
-        }
-    }
-    ?>
 </body>
 </html>
