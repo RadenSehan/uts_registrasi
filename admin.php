@@ -60,13 +60,15 @@ $db->close();
         mysqli_query($db, "DELETE FROM tb_form WHERE id='$id'");
 
         echo "<script> alert ('Berhasil menghapus data')</script>";
-    }
-?>
+?>      
+         <script>window.location = 'admin.php'; </script>
+
+    <?php }?>
 <div class="data-konser">
     <h2>Data School Festival Consert</h2>
     <hr>
     <div id="tambah_data">
-        <a href="index.php" class="btn btn-primary btn-lg" role="button"><i class="bi bi-plus-square"></i> Tambah Data</a>
+        <a href="index.php" class="btn btn-primary" role="button"><i class="bi bi-plus-square"></i> Tambah Data</a>
     </div>
     <br>
     <table border="1" cellspacing="0" cellpadding="9" align="center">
@@ -103,8 +105,8 @@ $db->close();
                     <img src="/uts_registrasi/images/<?php echo $row["foto"]; ?>" width="150" height="90">
                 </td>
                 <td id="aksi">
-                    <a href="update.php?id=<?php echo $row['id']?>" class="btn btn-success btn-lg" role="button"><i class="bi bi-pencil-square"></i></a>
-                    <a href="?proses=hapus&&id=<?php echo $row['id']?>" class="btn btn-danger btn-lg" role="button"><i class="bi bi-trash-fill"></i></a>
+                    <a href="form_update.php?id=<?php echo $row['id']?>" class="btn btn-success" role="button"><i class="bi bi-pencil-square"></i></a>
+                    <a href="?proses=hapus&&id=<?php echo $row['id']?>" class="btn btn-danger" role="button"><i class="bi bi-trash-fill"></i></a>
                 </td>
             </tr>
         <?php } ?>

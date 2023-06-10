@@ -141,7 +141,7 @@
                     <input type="file" name="foto" accept="image/*" required />
                 </div>
 
-                <a href="admin.php" class="btn btn-warning" role="button">Admin</a>
+                <a href="admin.php" class="btn btn-warning" role="button" _blank>Admin</a>
                 <button type="submit" name="submit" class="btn btn-primary">SUBMIT</button>
 
             </div>
