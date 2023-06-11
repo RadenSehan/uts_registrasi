@@ -16,7 +16,7 @@
         }
 
         body {
-            margin: 5cm;
+            margin: 4cm;
             font-family: "Segoe UI";
             font-size: 14px;
             background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
@@ -121,6 +121,8 @@
             </div>
         </form>
     </div>
+    <script src="script.js"></script>
+    
     <?php
     if (isset($_POST['submit'])) {
         $db = new mysqli("localhost", "root", "", "db_konser");

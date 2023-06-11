@@ -16,7 +16,7 @@
         }
 
         body {
-            margin: 4cm;
+            margin: 3cm;
             font-family: "Segoe UI";
             font-size: 14px;
             background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
@@ -121,7 +121,7 @@
                 </div>
                 <div class="input-box">
                     <label for="foto">Foto Kartu Pelajar*</label>
-                    <img src="/uts_registrasi/images/<?php echo $data['foto'] ?>" width="150" height="90">
+                    <img src="/uts_registrasi/images/<?php echo $data['foto'] ?>" width="250" height="150">
                 </div>
 
                 <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
