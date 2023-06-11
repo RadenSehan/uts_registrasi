@@ -14,7 +14,7 @@
         background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 1450px;
+        background-size: 2000px;
     }
 
     h2 {
@@ -38,7 +38,7 @@
         box-shadow: inset -2px 2px 2px white;
     }
     #tambah_data{
-        margin-left: 2cm;
+        margin-left: 2.9cm;
     }
 </style>
 </head>
@@ -57,7 +57,8 @@ $db->close();
 
     if(@$_GET['proses']=='hapus'){
         $id=$_GET['id'];
-        mysqli_query($db, "DELETE FROM tb_form WHERE id='$id'");
+        $sql = "DELETE FROM tb_form WHERE id='$id'";
+        mysqli_query($db, $sql);
 
         echo "<script> alert ('Berhasil menghapus data')</script>";
 ?>      

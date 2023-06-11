@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <title>UTS Registrasi</title>
+    <title>Form Edit Data</title>
     <style type="text/css">
         * {
             padding: 0;
@@ -16,12 +16,13 @@
         }
 
         body {
+            margin: 4cm;
             font-family: "Segoe UI";
             font-size: 14px;
             background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 1400px;
+            background-size: 2000px;
         }
 
         .container {
@@ -87,7 +88,8 @@
     $db = new mysqli("localhost", "root", "", "db_konser");
 
     $id=$_GET['id'];
-    $q=mysqli_query($db, "SELECT * FROM tb_form WHERE id='$id'");
+    $sql = "SELECT * FROM tb_form WHERE id='$id'";
+    $q=mysqli_query($db, $sql);
     while($data=mysqli_fetch_array($q)){
     ?>
 
@@ -105,7 +107,7 @@
                 </div>
                 <div class="input-box">
                     <label for="email">Email*</label>
-                    <input type="text" name="email" placeholder="Masukkan Email" value="<?php echo $data['email'] ?>" required>
+                    <input type="email" name="email" placeholder="Masukkan Email" value="<?php echo $data['email'] ?>" required>
                 </div>
                 <div class="input-box">
                     <label for="konser">Pilih Festival Konser*</label>

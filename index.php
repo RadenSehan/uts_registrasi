@@ -16,12 +16,13 @@
         }
 
         body {
+            margin: 5cm;
             font-family: "Segoe UI";
             font-size: 14px;
             background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 1400px;
+            background-size: 2000px;
         }
 
         .container {
@@ -80,7 +81,47 @@
 </head>
 
 <body>
-<?php
+    <div class="container">
+
+        <h2>School Music Concert Festival</h2>
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div class="main-input-info">
+                <div class="input-box">
+                    <label for="nama_lengkap">Nama Lengkap*</label>
+                    <input id="name" type="text" name="nama_lengkap" placeholder="Masukkan Nama Lengkap" size="38"
+                        required>
+                </div>
+                <div class="input-box">
+                    <label for="alamat">Alamat*</label>
+                    <textarea name="alamat" placeholder="Masukkan Alamat" required></textarea>
+                </div>
+                <div class="input-box">
+                    <label for="email">Email*</label>
+                    <input type="email" name="email" placeholder="Masukkan Email" required>
+                </div>
+                <div class="input-box">
+                    <label for="konser">Pilih Festival Konser*</label>
+                    <select name="konser" required>
+                        <option>Tulus - 17 Mei 2024</option>
+                        <option>Dewa 19 - 20 Mei 2024</option>
+                        <option>Weird Genius - 23 Mei 2024</option>
+                        <option>Sheila On 7 - 27 Mei 2024</option>
+                        <option>Raisa Live in Concert - 29 Mei 2024</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label for="foto">Foto Kartu Pelajar*</label>
+                    <input type="file" name="foto" accept="image/*" required />
+                </div>
+
+                <a href="login_admin.php" class="btn btn-warning" role="button" _blank>Admin</a>
+                <button type="submit" name="submit" class="btn btn-primary">SUBMIT</button>
+
+            </div>
+        </form>
+    </div>
+    <?php
     if (isset($_POST['submit'])) {
         $db = new mysqli("localhost", "root", "", "db_konser");
 
@@ -106,46 +147,5 @@
         }
     }
     ?>
-
-    <div class="container">
-
-        <h2>School Music Concert Festival</h2>
-
-        <form action="" method="POST" enctype="multipart/form-data">
-            <div class="main-input-info">
-                <div class="input-box">
-                    <label for="nama_lengkap">Nama Lengkap*</label>
-                    <input id="name" type="text" name="nama_lengkap" placeholder="Masukkan Nama Lengkap" size="38"
-                        required>
-                </div>
-                <div class="input-box">
-                    <label for="alamat">Alamat*</label>
-                    <textarea name="alamat" placeholder="Masukkan Alamat" required></textarea>
-                </div>
-                <div class="input-box">
-                    <label for="email">Email*</label>
-                    <input type="text" name="email" placeholder="Masukkan Email" required>
-                </div>
-                <div class="input-box">
-                    <label for="konser">Pilih Festival Konser*</label>
-                    <select name="konser" required>
-                        <option>Tulus - 17 Mei 2024</option>
-                        <option>Dewa 19 - 20 Mei 2024</option>
-                        <option>Weird Genius - 23 Mei 2024</option>
-                        <option>Sheila On 7 - 27 Mei 2024</option>
-                        <option>Raisa Live in Concert - 29 Mei 2024</option>
-                    </select>
-                </div>
-                <div class="input-box">
-                    <label for="foto">Foto Kartu Pelajar*</label>
-                    <input type="file" name="foto" accept="image/*" required />
-                </div>
-
-                <a href="admin.php" class="btn btn-warning" role="button" _blank>Admin</a>
-                <button type="submit" name="submit" class="btn btn-primary">SUBMIT</button>
-
-            </div>
-        </form>
-    </div>
 </body>
 </html>
