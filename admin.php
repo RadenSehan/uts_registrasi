@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -16,7 +16,7 @@
             background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 2000px;
+            background-size: 100%;
         }
 
         h2 {
@@ -31,8 +31,8 @@
             text-align: center;
         }
 
-        .data-konser {
-            width: 70%;
+        .container {
+            width: auto;
             padding: 0.5cm;
             background-color: #ffffff;
             border-radius: 0.5cm;
@@ -41,20 +41,25 @@
         }
 
         #tambah_data {
-            margin-left: 3cm;
+            margin-left: 5%;
+        }
+
+        #tambah_keg {
+            margin-left: 62%;
         }
     </style>
 </head>
 
 <body>
-    <div class="data-konser">
+    <div class="container">
         <h2>Data School Festival Consert</h2>
         <hr>
-        <div id="tambah_data">
-            <a href="index.php" class="btn btn-primary" role="button"><i class="bi bi-plus-square"></i> Tambah Data</a>
+        <div class="tambah">
+            <a id="tambah_data" href="index.php" class="btn btn-primary" role="button"><i class="bi bi-person-plus-fill"></i> Tambah Data</a>
+            <a id="tambah_keg" href="tambah_kegiatan.php" class="btn btn-warning" role="button"><i class="bi bi-plus-square-fill"></i> Tambah Kegiatan</a>
         </div>
         <br>
-        <table border="1" cellspacing="0" cellpadding="9" align="center">
+        <table border="1" cellpadding="9" align="center">
             <tr id="baris1" align="center">
                 <th>No</th>
                 <th>Nama Lengkap</th>
@@ -96,7 +101,7 @@
                     <td id="aksi">
                         <a href="form_update.php?id=<?php echo $row['id'] ?>" class="btn btn-success" role="button"><i
                                 class="bi bi-pencil-square"></i></a>
-                        <a href="?proses=hapus&&id=<?php echo $row['id'] ?>" class="btn btn-danger" role="button"><i
+                        <a href="?proses=hapus&&id=<?php echo $row['id'] ?>" class="btn btn-danger" role="button" onclick="return confirm('Apakah Anda yakin menghapus data ini?')"><i
                                 class="bi bi-trash-fill"></i></a>
                     </td>
                 </tr>

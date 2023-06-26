@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Form Edit Data</title>
@@ -22,7 +22,7 @@
             background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 2000px;
+            background-size: 100%;
         }
 
         .container {
@@ -37,6 +37,7 @@
 
         h2 {
             width: 60%;
+            height: 5%;
             color: #ffffff;
             font-size: 27px;
             font-weight: 700;
@@ -84,14 +85,14 @@
         <a href="admin.php" class="btn btn-primary btn-lg" role="button"><i class="bi bi-arrow-left-square"></i></a>
         <h2>Edit Data</h2>
 
-    <?php
-    $db = new mysqli("localhost", "root", "", "db_konser");
+        <?php
+        $db = new mysqli("localhost", "root", "", "db_konser");
 
-    $id=$_GET['id'];
-    $sql = "SELECT * FROM tb_form WHERE id='$id'";
-    $q=mysqli_query($db, $sql);
-    while($data=mysqli_fetch_array($q)){
-    ?>
+        $id=$_GET['id'];
+        $sql = "SELECT * FROM tb_form WHERE id='$id'";
+        $q=mysqli_query($db, $sql);
+        while($data=mysqli_fetch_array($q)){
+        ?>
 
         <form action="update.php" method="POST">
             <div class="main-input-info">
@@ -111,12 +112,17 @@
                 </div>
                 <div class="input-box">
                     <label for="konser">Pilih Festival Konser*</label>
-                    <select name="konser" value="<?php echo $data['konser'] ?>" required>
-                        <option>Tulus - 17 Mei 2024</option>
-                        <option>Dewa 19 - 20 Mei 2024</option>
-                        <option>Weird Genius - 23 Mei 2024</option>
-                        <option>Sheila On 7 - 27 Mei 2024</option>
-                        <option>Raisa Live in Concert - 29 Mei 2024</option>
+                    <select name="konser" required>
+                        <option value="">-Pilih-</option>
+                        <?php
+                        $db = new mysqli("localhost", "root", "", "db_konser");
+
+                        $sql = ('SELECT * FROM tb_kegiatan');
+                        $q = mysqli_query($db, $sql);
+                        while($kegiatan = mysqli_fetch_array($q)) {
+                            echo '<option value="'.$kegiatan['kegiatan'].'">'.$kegiatan['kegiatan'].'</option>';
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="input-box">
