@@ -9,65 +9,136 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Login Admin</title>
     <style type="text/css">
-        * {
-            padding: 0;
-            margin: 0;
-            font-family: Segoe UI;
+        @media (min-width: 370px) {
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            body {
+                margin-top: 30%;
+                background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 290%;
+            }
+
+            .container {
+                width: 80%;
+                padding: 0.5cm;
+                background-color: #ffffff;
+                border-radius: 10px;
+                margin: 1cm auto;
+                box-shadow: inset -2px 2px 2px white;
+            }
+
+            h2 {
+                width: 80%;
+                color: #ffffff;
+                font-size: 20px;
+                font-weight: 17x;
+                font-family: Segoe UI;
+                margin: 1cm auto;
+                background-color: #1E90FF;
+                border-radius: 5px;
+                text-align: center;
+            }
+
+            .input-box {
+                display: flex;
+                flex-wrap: wrap;
+                width: 105%;
+                padding-bottom: 15px;
+                font-family: Segoe UI;
+            }
+
+            .input-box label {
+                width: 95%;
+                font-size: 16px;
+                font-weight: 7px;
+                margin: 5px;
+            }
+
+            .input-box input {
+                height: 30px;
+                width: 95%;
+                border-radius: 5px;
+                outline: none;
+                border: 2px solid black;
+                padding: 0 8px;
+            }
+
+            button {
+                margin-left: 30%;
+                width: 40%;
+            }
         }
 
-        body {
-            margin: 9%;
-            font-size: 14px;
-            background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 100%;
-        }
+        @media screen and (min-width: 1114px) {
+            * {
+                padding: 0;
+                margin: 0;
+                font-family: Segoe UI;
+            }
 
-        .container { 
-            width: 25%;
-            padding: 0.5cm;
-            background-color: #ffffff;
-            border-radius: 0.5cm;
-            margin: 1cm auto;
-            box-shadow: inset -2px 2px 2px white;
-        }
-        h2 {
-            width: 80%;
-            color: #ffffff;
-            font-size: 27px;
-            font-weight: 20px;
-            font-family: Segoe UI;
-            margin: 1cm auto;
-            background-color: #1E90FF;
-            border-radius: 5px;
-            text-align: center;
-        }
-        .input-box {
-            display: flex;
-            flex-wrap: wrap;
-            width: 105%;
-            padding-bottom: 15px;
-            font-family: Segoe UI;
-        }
-        .input-box label {
-            width: 95%;
-            font-size: 16px;
-            font-weight: 7px;
-            margin: 5px;
-        }
+            body {
+                margin: 9%;
+                font-size: 14px;
+                background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 120%;
+            }
 
-        .input-box input {
-            height: 30px;
-            width: 95%;
-            border-radius: 5px;
-            outline: none;
-            border: 2px solid black;
-            padding: 0 8px;
-        }
-        button {
-            margin-left: 30%;
-            width: 40%;
+            .container { 
+                width: 25%;
+                padding: 0.5cm;
+                background-color: #ffffff;
+                border-radius: 0.5cm;
+                margin: 1cm auto;
+                box-shadow: inset -2px 2px 2px white;
+            }
+
+            h2 {
+                width: 80%;
+                color: #ffffff;
+                font-size: 27px;
+                font-weight: 20px;
+                font-family: Segoe UI;
+                margin: 1cm auto;
+                background-color: #1E90FF;
+                border-radius: 5px;
+                text-align: center;
+            }
+
+            .input-box {
+                display: flex;
+                flex-wrap: wrap;
+                width: 105%;
+                padding-bottom: 15px;
+                font-family: Segoe UI;
+            }
+
+            .input-box label {
+                width: 95%;
+                font-size: 16px;
+                font-weight: 7px;
+                margin: 5px;
+            }
+
+            .input-box input {
+                height: 30px;
+                width: 95%;
+                border-radius: 5px;
+                outline: none;
+                border: 2px solid black;
+                padding: 0 8px;
+            }
+
+            button {
+                margin-left: 30%;
+                width: 40%;
+            }
         }
         </style>
 </head>
@@ -93,8 +164,6 @@
     <script src="script.js"></script>
 
     <?php
-
-    session_start();
 
     if (isset($_POST['login'])) {
         $db = new mysqli("localhost", "root", "", "db_konser");

@@ -9,17 +9,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>School Music Concert Festival</title>
     <style type="text/css">
-        @media (min-width: 370px) and (max-width: 1165px) {
+        @media (min-width: 370px) {
             * {
                 padding: 0;
                 margin: 0;
-                box-sizing: border-box;
-                font-family: Segoe UI;
             }
 
             body {
-                margin-top: 10%;
-                font-size: 14px;
+                margin-top: 30%;
                 background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
                 background-repeat: no-repeat;
                 background-position: center;
@@ -27,8 +24,7 @@
             }
 
             .container {
-                width: 70%;
-                max-width: 600px;
+                width: 80%;
                 padding: 15px;
                 background-color: #ffffff;
                 border-radius: 10px;
@@ -75,7 +71,7 @@
             }
         }
 
-        @media screen and (min-width: 1166px) {
+        @media screen and (min-width: 839px) {
             * {
                 padding: 0;
                 margin: 0;
@@ -84,12 +80,12 @@
             }
 
             body {
-                margin: 9%;
+                margin-top: 10%;
                 font-size: 14px;
                 background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
                 background-repeat: no-repeat;
                 background-position: center;
-                background-size: 100%;
+                background-size: 140%;
             }
 
             .container {
