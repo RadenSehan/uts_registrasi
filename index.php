@@ -3,79 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/concert.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <title>UTS Registrasi</title>
+    <title>School Music Concert Festival</title>
     <style type="text/css">
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            font-family: Segoe UI;
+        @media (min-width: 370px) and (max-width: 1165px) {
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                font-family: Segoe UI;
+            }
+
+            body {
+                margin-top: 10%;
+                font-size: 14px;
+                background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 290%;
+            }
+
+            .container {
+                width: 70%;
+                max-width: 600px;
+                padding: 15px;
+                background-color: #ffffff;
+                border-radius: 10px;
+                margin: 1cm auto;
+                box-shadow: inset -2px 2px 2px white;
+            }
+
+            h2 {
+                width: 80%;
+                color: #ffffff;
+                font-size: 20px;
+                font-weight: 17px;
+                font-family: Segoe UI;
+                margin: 1cm auto;
+                background-color: #1E90FF;
+                border-radius: 5px;
+                text-align: center;
+            }
+
+            .input-box {
+                display: flex;
+                flex-wrap: wrap;
+                width: 105%;
+                padding-bottom: 15px;
+                font-family: Segoe UI;
+            }
+
+            .input-box label {
+                width: 95%;
+                font-size: 16px;
+                font-weight: 600;
+                margin: 5px 0;
+            }
+
+            .input-box input,
+            textarea,
+            select {
+                height: 30px;
+                width: 95%;
+                border-radius: 5px;
+                outline: none;
+                border: 2px solid black;
+                padding: 0 8px;
+            }
         }
 
-        body {
-            margin: 4cm;
-            font-family: "Segoe UI";
-            font-size: 14px;
-            background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 100%;
-        }
+        @media screen and (min-width: 1166px) {
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                font-family: Segoe UI;
+            }
 
-        .container {
-            width: 70%;
-            max-width: 600px;
-            padding: 0.5cm;
-            background-color: #ffffff;
-            border-radius: 0.5cm;
-            margin: 1cm auto;
-            box-shadow: inset -2px 2px 2px white;
-        }
+            body {
+                margin: 9%;
+                font-size: 14px;
+                background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+            }
 
-        h2 {
-            width: 80%;
-            color: #ffffff;
-            font-size: 27px;
-            font-weight: 700;
-            font-family: Segoe UI;
-            margin: 1cm auto;
-            background-color: #1E90FF;
-            border-radius: 5px;
-            text-align: center;
-        }
+            .container {
+                width: 70%;
+                max-width: 600px;
+                padding: 15px;
+                background-color: #ffffff;
+                border-radius: 10px;
+                margin: 1cm auto;
+                box-shadow: inset -2px 2px 2px white;
+            }
 
-        .input-box {
-            display: flex;
-            flex-wrap: wrap;
-            width: 105%;
-            padding-bottom: 15px;
-            font-family: Segoe UI;
-        }
+            h2 {
+                width: 80%;
+                color: #ffffff;
+                font-size: 27px;
+                font-weight: 700;
+                font-family: Segoe UI;
+                margin: 1cm auto;
+                background-color: #1E90FF;
+                border-radius: 5px;
+                text-align: center;
+            }
 
-        .input-box label {
-            width: 95%;
-            font-size: 16px;
-            font-weight: 600;
-            margin: 5px 0;
-        }
+            .input-box {
+                display: flex;
+                flex-wrap: wrap;
+                width: 105%;
+                padding-bottom: 15px;
+                font-family: Segoe UI;
+            }
 
-        .input-box input,
-        textarea,
-        select {
-            height: 30px;
-            width: 95%;
-            border-radius: 5px;
-            outline: none;
-            border: 2px solid black;
-            padding: 0 8px;
-        }
+            .input-box label {
+                width: 95%;
+                font-size: 16px;
+                font-weight: 7px;
+                margin: 5px;
+            }
 
-        button {
-            margin-left: 10.1cm;
-            height: 50px;
+            .input-box input,
+            textarea,
+            select {
+                height: 30px;
+                width: 95%;
+                border-radius: 5px;
+                outline: none;
+                border: 2px solid black;
+                padding: 0 8px;
+            }
+
+            button {
+                margin-left: 68%;
+                height: 50px;
+            }
         }
     </style>
 </head>

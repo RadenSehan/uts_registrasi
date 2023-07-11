@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/concert.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Data Konser</title>
     <style type="text/css">
         body {
-            margin: 1cm;
-            font-family: "Segoe UI";
-            font-size: 14px;
+            margin: 4%;
             background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
             background-repeat: no-repeat;
             background-position: center;
@@ -20,7 +19,7 @@
         }
 
         h2 {
-            width: 88%;
+            width: 50vw;
             color: #ffffff;
             font-size: 27px;
             font-weight: 700;
@@ -41,11 +40,11 @@
         }
 
         #tambah_data {
-            margin-left: 5%;
+            margin-left: 4%;
         }
 
         #tambah_keg {
-            margin-left: 62%;
+            margin-left: 64%;
         }
     </style>
 </head>
