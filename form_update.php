@@ -9,19 +9,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Form Edit Data</title>
     <style type="text/css">
-        @media screen and (min-width: 370px) {
+        @media screen and (max-width: 973px) {
             * {
                 padding: 0;
                 margin: 0;
             }
 
             body {
-                margin-top: 20%;
+                margin-top: 10%;
                 font-size: 14px;
                 background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
-                background-repeat: no-repeat;
                 background-position: center;
-                background-size: 290%;
+                background-size: 100%;
             }
 
             .container {
@@ -88,9 +87,8 @@
                 font-family: "Segoe UI";
                 font-size: 14px;
                 background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
-                background-repeat: no-repeat;
                 background-position: center;
-                background-size: 120%;
+                background-size: 100%;
             }
 
             .container {

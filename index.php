@@ -9,22 +9,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>School Music Concert Festival</title>
     <style type="text/css">
-        @media (min-width: 370px) {
+        @media (max-width: 1049px) {
             * {
                 padding: 0;
                 margin: 0;
             }
 
             body {
-                margin-top: 30%;
+                margin: 10%;
+                margin-top: 20%;
                 background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
-                background-repeat: no-repeat;
                 background-position: center;
-                background-size: 290%;
+                background-size: 100%;
             }
 
             .container {
-                width: 80%;
+                width: auto;
                 padding: 15px;
                 background-color: #ffffff;
                 border-radius: 10px;
@@ -71,21 +71,18 @@
             }
         }
 
-        @media screen and (min-width: 839px) {
+        @media screen and (min-width: 1050px) {
             * {
                 padding: 0;
                 margin: 0;
-                box-sizing: border-box;
-                font-family: Segoe UI;
             }
-
+            
             body {
                 margin-top: 10%;
                 font-size: 14px;
                 background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
-                background-repeat: no-repeat;
                 background-position: center;
-                background-size: 140%;
+                background-size: 110%;
             }
 
             .container {
@@ -138,7 +135,6 @@
 
             button {
                 margin-left: 68%;
-                height: 50px;
             }
         }
     </style>

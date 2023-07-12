@@ -12,9 +12,8 @@
         body {
             margin: 4%;
             background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
-            background-repeat: no-repeat;
             background-position: center;
-            background-size: 360%;
+            background-size: 100%;
         }
 
         h2 {
