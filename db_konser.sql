@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 11, 2023 at 10:15 AM
+-- Generation Time: Jul 12, 2023 at 03:01 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.4
 
@@ -42,11 +42,11 @@ CREATE TABLE `tb_form` (
 
 INSERT INTO `tb_form` (`id`, `nama_lengkap`, `alamat`, `email`, `konser`, `foto`) VALUES
 (1, 'Afiqo Ilman', 'Ngoro, Mojokerto', 'afiqol@gmail.com', 'Dewa 19 - 20 Mei 2024', 'ghost-of-tsushima-art-uhdpaper.com-4K-5.1587.jpg'),
-(2, 'Rizki Bintang', 'Sukodono, Sidoarjo', 'rbintang@gmail.com', 'Tulus - 17 Mei 2024', 'iso-9001-2015.jpg'),
+(2, 'Rizki Bintang', 'Sukodono, Sidoarjo', 'rbintang@gmail.com', 'Rhoma Kelapa - 11 Mei 2024', 'iso-9001-2015.jpg'),
 (3, 'Ajis Doa Ibu', 'Tandes, Surabaya', 'ajizizir@gmail.com', 'Weird Genius - 23 Mei 2024', 'pexels-krivec-ales-547115.jpg'),
 (4, 'Ais Ahmad', 'Pakal, Surabaya', 'aisahamad@gmail.com', 'Dewa 19 - 20 Mei 2024', 'bggreenyellow.jpg'),
 (5, 'Raden Sehan', 'Gayungan, Surabaya', 'radensehan@gmail.com', 'SLANK - 2 Juni 2024', '2T3qqti-minimalist-backgrounds.png'),
-(6, 'Sodeq', 'Pare, Kab. Kediri', 'sodeq@gmail.com', 'Tulus - 17 Mei 2024', 'bg merah putih.jpg');
+(6, 'Adib Amrullah', 'Gresik', 'adibm@gmail.com', 'Dewa 19 - 20 Mei 2024', 'wallpaperflare.com_wallpaper.jpg');
 
 -- --------------------------------------------------------
 
@@ -70,7 +70,7 @@ INSERT INTO `tb_kegiatan` (`id`, `kegiatan`) VALUES
 (4, 'Sheila On 7 - 27 Mei 2024'),
 (5, 'Raisa Live in Concert - 29 Mei 2024'),
 (6, 'SLANK - 2 Juni 2024'),
-(7, 'Rhoma Kelapa - 11 Mei 2024');
+(7, 'Noah Fest - 7  Juni 2024');
 
 -- --------------------------------------------------------
 
