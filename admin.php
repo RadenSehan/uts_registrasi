@@ -81,6 +81,7 @@
                         <th>Alamat</th>
                         <th>Email</th>
                         <th>Konser</th>
+                        <th>Tanggal</th>
                         <th>Foto Kartu Pelajar</th>
                         <th>Aksi</th>
                     </tr>
@@ -110,6 +111,9 @@
                             </td>
                             <td>
                                 <?= $row["konser"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["tanggal"]; ?>
                             </td>
                             <td>
                                 <img src="/uts_registrasi/images/<?php echo $row["foto"]; ?>" width="150" height="90">

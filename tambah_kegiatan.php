@@ -83,7 +83,7 @@
             }
 
             body {
-                margin: 10%;
+                margin: 4%;
                 background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
                 background-position: center;
                 background-size: 100%;
@@ -151,7 +151,11 @@
         <form action="" method="POST" enctype="multipart/form-data">
             <div class="input-box">
                 <label for="kegiatan">Nama Kegiatan*</label>
-                <input type="text" name="kegiatan" placeholder="Nama Kegiatan - Tanggal" required>
+                <input type="text" name="kegiatan" placeholder="Masukkan Nama Kegiatan" required>
+            </div>
+            <div class="input-box">
+                <label for="tanggal">Tanggal*</label>
+                <input type="date" name="tanggal" required>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Tambah</button>
         </form>
@@ -163,13 +167,14 @@
         $db = new mysqli("localhost", "root", "", "db_konser");
 
         $kegiatan = $_POST["kegiatan"];
+        $tanggal = $_POST["tanggal"];
 
         $db = new mysqli("localhost", "root", "", "db_konser");
 
         if (mysqli_connect_errno()) {
             die("Connection error: " . mysqli_connect_errno());
         } else {
-            $sql = "INSERT INTO tb_kegiatan (kegiatan) VALUES ('$kegiatan')";
+            $sql = "INSERT INTO tb_kegiatan (kegiatan, tanggal) VALUES ('$kegiatan', '$tanggal')";
 
             mysqli_query($db, $sql);
             echo '<script language = "javascript">

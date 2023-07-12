@@ -192,6 +192,21 @@
                     </select>
                 </div>
                 <div class="input-box">
+                    <label for="tanggal">Tanggal (Samakan dengan kolom konser yg dipilih)*</label>
+                    <select name="tanggal" required>
+                    <option value="">Pilih</option>
+                        <?php
+                            $db = new mysqli("localhost", "root", "", "db_konser");
+
+                            $sql = ('SELECT * FROM tb_kegiatan');
+                            $q = mysqli_query($db, $sql);
+                            while($tanggal = mysqli_fetch_array($q)) {
+                                echo '<option value="'.$tanggal['tanggal'].'">'.$tanggal['tanggal'].'</option>';
+                            }
+                            ?>
+                    </select>
+                </div>
+                <div class="input-box">
                     <label for="foto">Foto Kartu Pelajar*</label>
                     <img src="/uts_registrasi/images/<?php echo $data['foto'] ?>" width="250" height="150">
                 </div>

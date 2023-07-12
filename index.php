@@ -78,11 +78,11 @@
             }
             
             body {
-                margin-top: 10%;
+                margin-top: 4%;
                 font-size: 14px;
                 background-image: url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
                 background-position: center;
-                background-size: 110%;
+                background-size: 100%;
             }
 
             .container {
@@ -176,6 +176,21 @@
                     </select>
                 </div>
                 <div class="input-box">
+                    <label for="tanggal">Tanggal (Samakan dengan kolom konser yg dipilih)*</label>
+                    <select name="tanggal" required>
+                    <option value="">Pilih</option>
+                        <?php
+                            $db = new mysqli("localhost", "root", "", "db_konser");
+
+                            $sql = ('SELECT * FROM tb_kegiatan');
+                            $q = mysqli_query($db, $sql);
+                            while($tanggal = mysqli_fetch_array($q)) {
+                                echo '<option value="'.$tanggal['tanggal'].'">'.$tanggal['tanggal'].'</option>';
+                            }
+                            ?>
+                    </select>
+                </div>
+                <div class="input-box">
                     <label for="foto">Foto Kartu Pelajar*</label>
                     <input type="file" name="foto" accept="image/*" required />
                 </div>
@@ -196,6 +211,7 @@
         $alamat = $_POST["alamat"];
         $email = $_POST["email"];
         $konser = $_POST["konser"];
+        $tanggal = $_POST["tanggal"];
         $foto = $_FILES["foto"]["name"];
         $tempname = $_FILES["foto"]["tmp_name"];
         $folder = "images/" . $foto;
@@ -206,8 +222,8 @@
         if (mysqli_connect_errno()) {
             die("Connection error: " . mysqli_connect_errno());
         } else {
-            $sql = "INSERT INTO tb_form (nama_lengkap, alamat, email, konser, foto)
-                VALUES ('$nama', '$alamat', '$email', '$konser', '$foto')";
+            $sql = "INSERT INTO tb_form (nama_lengkap, alamat, email, konser, tanggal, foto)
+                VALUES ('$nama', '$alamat', '$email', '$konser', '$tanggal', '$foto')";
 
             mysqli_query($db, $sql);
             echo "<script> alert ('Berhasil memasukkan data')</script>";
